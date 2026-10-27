@@ -138,9 +138,11 @@ function Todos() {
             </footer>
             </>
         )}
-            <button type="button" onClick={handleClearCompleted} className="cursor-pointer justify-self-end hover:underline">
-               Clear completed
-            </button>
+            {todos.some((todo) => todo.completed) && (
+              <button type="button" onClick={handleClearCompleted} className="cursor-pointer justify-self-end hover:underline">
+                 Clear completed
+              </button>
+            )}
         </div>
       </section>
   )
